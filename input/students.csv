@@ -1,4 +1,4 @@
-student_id,name,math,english,science
-S001,Koyel Sen,85,78,92
-S002,Parijat Sen,91,88,95
-S003,Soham Dey,67,74,71
+student_id,name,guardian_name,class,section,roll_no,dob,registration_no,attendance,bengali,mathematics,english,science
+S001,Koyel Sen,Parent Name,10,A,01,2007-05-12,REG001,95,85,90,88,92
+S002,Parijat Sen,Parent Name,10,A,02,2007-09-20,REG002,91,78,82,86,89
+S003,Soham Dey,Parent Name,10,B,03,2007-12-04,REG003,88,67,74,71,80

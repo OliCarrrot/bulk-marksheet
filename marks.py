@@ -1,16 +1,10 @@
-#import pandas as pd
-#from validation import validate_marks
-#from pdf import create_marksheet
+
+SUBJECTS = ["bengali", "mathematics", "english", "science"]
+
 
 def calculate_marks(students):
-    students["total"] = (
-        students["math"]
-        + students["english"]
-        + students["science"]
-    )
-
-    students["percentage"] = students["total"] / 3
-
+    students["total"] = students[SUBJECTS].sum(axis=1)
+    students["percentage"] = students["total"] / len(SUBJECTS)
     return students
 
 
@@ -30,11 +24,6 @@ def calculate_grade(percentage):
 
 
 def calculate_result(row):
-    if (
-        row["math"] >= 40
-        and row["english"] >= 40
-        and row["science"] >= 40
-    ):
+    if all(row[subject] >= 40 for subject in SUBJECTS):
         return "PASS"
-    else:
-        return "FAIL"
+    return "FAIL"

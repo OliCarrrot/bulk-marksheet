@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Marksheet Generator</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="container">
+    <header>
+        <p class="eyebrow">STUDENT MANAGEMENT</p>
+        <h1>Bulk Marksheet Generator</h1>
+        <p>Create formal school progress reports in bulk.</p>
+    </header>
+
+    <form class="upload-card" action="/generate" method="POST"
+          enctype="multipart/form-data">
+
+        <h2>School details</h2>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <label for="school_name">School name</label>
+        <input type="text" id="school_name" name="school_name"
+               placeholder="Enter school name" required>
+
+        <label for="school_address">School address</label>
+        <textarea id="school_address" name="school_address"
+                  placeholder="Enter complete school address"
+                  rows="2" required></textarea>
+
+        <div class="two-columns">
+            <div>
+                <label for="school_email">School email</label>
+                <input type="email" id="school_email" name="school_email"
+                       placeholder="school@example.com" required>
+            </div>
+            <div>
+                <label for="school_phone">Phone number</label>
+                <input type="tel" id="school_phone" name="school_phone"
+                       placeholder="School contact number" required>
+            </div>
+        </div>
+
+        <label for="academic_year">Academic year</label>
+        <input type="text" id="academic_year" name="academic_year"
+               placeholder="e.g. 2026-2027" required>
+
+        <label for="logo">School logo (optional)</label>
+        <input type="file" id="logo" name="logo"
+               accept=".png,.jpg,.jpeg">
+
+        <h2 class="section-heading">Student data</h2>
+        <p>Upload a CSV or Excel file containing the required columns.</p>
+
+        <label for="file">Student data file</label>
+        <input type="file" id="file" name="file"
+               accept=".csv,.xlsx" required>
+
+        <p class="note">
+            Required columns: student_id, name, guardian_name, class,
+            section, roll_no, dob, registration_no, attendance,
+            bengali, mathematics, english, science.
+        </p>
+
+        <button type="submit">Generate marksheets</button>
+    </form>
+
+    <footer>Bulk Marksheet Generator · Powered by Python</footer>
+</main>
+</body>
+</html>

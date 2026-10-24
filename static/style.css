@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff0f5;
+    color: #352331;
+}
+
+.container {
+    max-width: 900px;
+    margin: 45px auto;
+    padding: 24px;
+}
+
+header {
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    color: #db2777;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    color: #9d174d;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+header p:last-child,
+.upload-card > p {
+    color: #795568;
+    line-height: 1.6;
+}
+
+.upload-card {
+    background: white;
+    padding: 30px;
+    border: 1px solid #f0c6d8;
+    border-radius: 14px;
+    box-shadow: 0 8px 28px rgba(90, 25, 55, 0.07);
+}
+
+h2 {
+    color: #9d174d;
+    font-size: 21px;
+}
+
+.section-heading {
+    margin-top: 35px;
+    padding-top: 24px;
+    border-top: 1px solid #f0d6e2;
+}
+
+label {
+    display: block;
+    margin: 20px 0 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5c4d4;
+    border-radius: 7px;
+    background: #fffafd;
+    color: #352331;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #f9a8d4;
+    border-color: #db2777;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.note {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+button {
+    margin-top: 20px;
+    padding: 14px 22px;
+    background: #db2777;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #9d174d;
+}
+
+.error {
+    padding: 12px;
+    border-radius: 7px;
+    background: #ffe4e6;
+    color: #9f1239;
+}
+
+footer {
+    margin-top: 25px;
+    text-align: center;
+    color: #795568;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 15px auto;
+        padding: 14px;
+    }
+
+    .upload-card {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
